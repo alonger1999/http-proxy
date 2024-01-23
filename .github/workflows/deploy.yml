@@ -1,0 +1,22 @@
+name: CI/CD with SSH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        run: |
+          ssh -i my-ubuntu-server-22.pem ubuntu@3.14.132.14
+
+      - name: Deploy using SSH
+        run: |
+          cp ./server.js /home/ubuntu/http-proxy

@@ -1,0 +1,11 @@
+[Unit]
+Description=Node.js HTTP Proxy Server
+
+[Service]
+ExecStart=/usr/bin/node /root/http-proxy/server.js
+Restart=always
+User=root
+WorkingDirectory=/root/http-proxy
+
+[Install]
+WantedBy=default.target
