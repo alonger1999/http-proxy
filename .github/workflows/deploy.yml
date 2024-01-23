@@ -15,7 +15,7 @@ jobs:
 
       - name: Set up SSH
         run: |
-          ssh -i my-ubuntu-server-22.pem ubuntu@3.14.132.14
+          ssh -i ./my-ubuntu-server-22.pem ubuntu@3.14.132.14
 
       - name: Deploy using SSH
         run: |
